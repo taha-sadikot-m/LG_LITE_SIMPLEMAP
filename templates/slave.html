@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liquid Galaxy - Slave</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src='https://unpkg.com/maplibre-gl@3.0.1/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@3.0.1/dist/maplibre-gl.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="initial-form">
+        <h1>Join Session</h1>
+        <input type="text" id="room-code-input" class="input-field" placeholder="Enter Room Code">
+        <button id="join-room" class="btn-primary">Connect</button>
+    </div>
+
+    <div class="initial-form hidden" id="position-selection">
+        <h2>Select Screen Position</h2>
+        <div class="grid-buttons">
+            <button class="grid-btn" data-position="1">Left</button>
+            <button class="grid-btn" data-position="2">Center</button>
+            <button class="grid-btn" data-position="3">Right</button>
+        </div>
+    </div>
+
+    <div class="status-overlay">
+        <div class="status-item">
+            <span class="status-label">Node Type:</span>
+            <span class="status-value" id="node-type">Slave</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Room Code:</span>
+            <span class="status-value" id="room-code">-</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Position:</span>
+            <span class="status-value" id="node-position">-</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Status:</span>
+            <span class="status-value" id="connection-status">Disconnected</span>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    <div id="error-message" class="error-toast"></div>
+
+    <script src="/static/js/slave.js"></script>
+</body>
+</html>

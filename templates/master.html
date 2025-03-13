@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liquid Galaxy - Master</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src='https://unpkg.com/maplibre-gl@3.0.1/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@3.0.1/dist/maplibre-gl.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="initial-form">
+        <h1>Create New Session</h1>
+        <button id="create-room" class="btn-primary">Create Room</button>
+    </div>
+
+    <div class="status-overlay">
+        <div class="status-item">
+            <span class="status-label">Node Type:</span>
+            <span class="status-value" id="node-type">Master</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Room Code:</span>
+            <span class="status-value" id="room-code">-</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">Status:</span>
+            <span class="status-value" id="connection-status">Disconnected</span>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    <div id="error-message" class="error-toast"></div>
+
+
+    <div class="control-panel">
+        <div class="navigation-controls">
+            <button class="control-btn" id="zoom-in">+</button>
+            <button class="control-btn" id="zoom-out">-</button>
+            <div class="arrow-controls">
+                <button class="control-btn arrow" id="pan-up">↑</button>
+                <div>
+                    <button class="control-btn arrow" id="pan-left">←</button>
+                    <button class="control-btn arrow" id="pan-right">→</button>
+                </div>
+                <button class="control-btn arrow" id="pan-down">↓</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/master.js"></script>
+</body>
+</html>
